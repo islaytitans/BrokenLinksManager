@@ -14,12 +14,6 @@ namespace JonathanRobbins.BrokenLinksManager
     {
         public void Process()
         {
-            Sitecore.Data.Database db = Sitecore.Context.Database;
-            Sitecore.Links.LinkDatabase linkDb = Sitecore.Globals.LinkDatabase;
-            Sitecore.Links.ItemLink[] brokenLinks = linkDb.GetBrokenLinks(db);
-
-            foreach (ItemLink brokenLink in brokenLinks)
-            {
             Sitecore.Data.Database db = Sitecore.Data.Database.GetDatabase("master");
             Sitecore.Links.LinkDatabase linkDb = Sitecore.Globals.LinkDatabase;
             Sitecore.Links.ItemLink[] brokenLinks = linkDb.GetBrokenLinks(db);
@@ -62,8 +56,6 @@ namespace JonathanRobbins.BrokenLinksManager
                     {
                         sourceItem.Editing.CancelEdit();
                     }
-                }
-            }
                 }
             }
         }
